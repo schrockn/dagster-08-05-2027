@@ -5,7 +5,7 @@ from dagster import asset, define_asset_job, repository
 
 @asset
 def cereals():
-    # do i deploy fast
+    """In a branch deployment"""
     response = requests.get("https://docs.dagster.io/assets/cereal.csv")
     lines = response.text.split("\n")
     cereal_rows = [row for row in csv.DictReader(lines)]
